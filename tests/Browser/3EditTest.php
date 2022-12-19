@@ -1,27 +1,21 @@
 <?php
-
 namespace Tests\Browser;
-
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 use App\Models\Funcionario;
-
 class EditTest extends DuskTestCase
 {
     //deleta dados após teste:
     use DatabaseMigrations;
-
     /**
      * Teste para verificar se o funcionário pode editar outros funcionários do sistema.
-     *
      * @test
      */
     public function the_funcionario_can_edit()
     {
         //cria um funcionario no banco de dados através do factory
         $funcionario = Funcionario::factory()->create();
-
         //realiza o teste
         //Reminder: remove --headless from tests/DuskTestCase.php driver() to view the browser
         $this->browse(function (Browser $browser) use ($funcionario) {

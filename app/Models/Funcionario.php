@@ -11,7 +11,4 @@ class Funcionario extends Model
 
     protected $fillable = ['nome','usuario','senha','admin','ativado'];
 
-    public function operacoes() {
-        return $this->hasMany('App\Models\Operacao');
-    }
 }
